@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
+import  { NavbarWithMegaMenu } from "./Header";
 import Footer from "./Footer";
 
 const DefaultLayout = () => {
     return (
         <>
-            <Header />
+          
+            <NavbarWithMegaMenu/>
             <main>
                 <Outlet />
             </main>
