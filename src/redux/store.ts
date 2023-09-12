@@ -1,8 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
-import testReducer from "./test";
+import { configureStore } from '@reduxjs/toolkit';
+import pitchApi from '~/pages/Admin/Pitch/api/pitch.api';
 
 export const store = configureStore({
-    reducer: { testReducer },
+    reducer: {
+        [pitchApi.reducerPath]: pitchApi.reducer,
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([pitchApi.middleware]),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
